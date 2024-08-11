@@ -22,7 +22,7 @@ const Navbar = () => {
 
           <Link to="/signup" className="text-white">Signup / Login</Link>
 
-          <Link to="/profile" className="text-white">Profile</Link>
+          {/* <Link to="/profile" className="text-white">Profile</Link> */}
         </div>
 
         <div className="md:hidden">
