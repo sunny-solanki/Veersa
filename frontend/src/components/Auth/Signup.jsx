@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const url = "http://localhost:5000";
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -13,7 +12,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${url}/api/auth/signup`, { name, email, password, role });
+      await axios.post(`/api/auth/signup`, { name, email, password, role });
       navigate('/');
     } catch (error) {
       console.error('Signup failed:', error);

@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-  const url = "http://localhost:5000";
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -14,7 +13,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`${url}/api/auth/login`, { email, password });
+      const { data } = await axios.post(`/api/auth/login`, { email, password });
       dispatch(login({ user: data.user, token: data.token }));
       navigate(data.user.role === 'doctor' ? '/doctor-dashboard' : '/patient-dashboard');
     } catch (error) {
