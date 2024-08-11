@@ -4,19 +4,24 @@ import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
 import DoctorDashboard from './components/Dashboard/DoctorDashboard';
 import PatientDashboard from './components/Dashboard/PatientDashboard';
-import Layout from './components/Layout/Layout';
+import Homepage from './pages/Homepage';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Profile from './pages/Profile';
 
 function App() {
   return (
     <Router>
-      <Layout>
+        <Navbar/>
         <Routes>
-          <Route path="/" element={<Signup />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
           <Route path="/patient-dashboard" element={<PatientDashboard />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
-      </Layout>
+        <Footer />
     </Router>
   );
 }

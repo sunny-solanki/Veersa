@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUserProfile } from '../../redux/slices/userSlice';
+import { fetchUserProfile } from '../redux/slices/userSlice'
 
 const Profile = () => {
   const dispatch = useDispatch();
